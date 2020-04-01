@@ -6,6 +6,7 @@ import { Product } from './interfaces/product.interface';
 import { CreateProductDTO } from './dto/product.dto';
 @Injectable()
 export class ProductService {
+    // Metodos para manejo de datos en Mongo (ORM)
     constructor(@InjectModel('Product') private readonly productModel: Model<Product>) { }
     async getProducts(): Promise<Product[]> {
         const products = await this.productModel.find();
